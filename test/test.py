@@ -2,7 +2,7 @@ import json
 import numpy as np
 from chaintmat import ChainTmat
 
-spacedict = json.load(open("notes.json", "r")) # 导入状态空间映射(音符 -> 索引值)
+spacedict = json.load(open("notes.json", "r")) 
 invspacedict = json.load(open("notes_inv.json", "r"))
 inv = invspacedict
 
