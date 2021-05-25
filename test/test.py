@@ -1,8 +1,11 @@
+# test
+# Author: Shuoxue Li <1620480103@qq.com>
+
 import json
 import numpy as np
 from chaintmat import ChainTmat
 
-spacedict = json.load(open("notes.json", "r")) 
+spacedict = json.load(open("notes.json", "r")) # 导入状态空间映射(音符 -> 索引值)
 invspacedict = json.load(open("notes_inv.json", "r"))
 inv = invspacedict
 
@@ -12,9 +15,9 @@ def chain2file(chain, fname): f=open(fname, "w"); f.write("\n".join([inv[str(x)]
 mm = ChainTmat(dim=len(invspacedict))
 
 if __name__ == "__main__":
-    nfile = input("Number of input score file: ")
+    nfile = input("Number of input score files: ")
     for x in range(int(nfile)):
-        mm.append(file2chain(input("({}/{}) Filname: ".format(x+1, nfile))))
+        mm.append(file2chain(input("({}/{}) Filename: ".format(x+1, nfile))))
     mm.chain2tmat()
     tmat = mm.matrix
     matdir = input("Direction of transfer matrix file: ")
